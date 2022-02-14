@@ -1,1 +1,1 @@
-# Global AD Platform
+# Global AD Manager Platform
