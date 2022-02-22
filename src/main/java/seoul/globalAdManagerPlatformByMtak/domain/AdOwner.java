@@ -3,9 +3,10 @@ package seoul.globalAdManagerPlatformByMtak.domain;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,6 +17,9 @@ public class AdOwner {
 
     @Column(nullable = false)
     private String nickname;
+
+    @OneToMany(mappedBy = "owner")
+    List<Ad> ads = new ArrayList<Ad>();
 
     @Builder
     public AdOwner(String nickname) {
