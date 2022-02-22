@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Ad</title>
+</head>
+<body>
+    <form action="http://localhost:8080/ad" th:action="@{/}" method="post" enctype="multipart/form-data"/>
+    <input type="text"  value="title" th:name="title"/>
+    <input type="text" value="content"th:name="content"/>
+    <input type="text" value="url" th:name="url"/>
+    <input type="text" value="owner"th:name="owner"/>
+<!--    <input type="text" th:name="allocation_budget_per_day"/>-->
+<!--    <input type="text" th:name="gender"/>-->
+<!--    <input type="text" th:name="generation"/>-->
+<!--    <input type="text" th:name="location"/>-->
+<!--    <input type="text" th:name="start_date"/>-->
+    <input type="file" multiple="multiple" th:name="files"/>
+    <button type="submit">ENTER</button>
+</body>
+</html>
