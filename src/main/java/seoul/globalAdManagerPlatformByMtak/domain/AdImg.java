@@ -1,23 +1,31 @@
 package seoul.globalAdManagerPlatformByMtak.domain;
 
+import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class AdImg {
-    @Id
+    @Id @GeneratedValue
+    private Long id;
+    @NotNull
+    private Long boardIdx;
+    @NotNull
     private String location;
+    @NotNull
+    private String fileName;
 
-    private Integer ad_id;
+    private long fileSize;
 
-    @Builder
-    public AdImg(String location, Integer ad_id) {
-        this.location = location;
-        this.ad_id = ad_id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "AD_ID")
+    private Ad ad;
+
 }
 
